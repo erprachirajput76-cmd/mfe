@@ -1,13 +1,11 @@
 const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
 
 module.exports = withNativeFederation({
+  name: 'shell',
 
-  remotes: {
-    mfe1: 'https://erprachirajput76-cmd.github.io/mfe/remoteEntry.json'
-  },
+  publicPath: 'https://erprachirajput76-cmd.github.io/mfe/shell/',
 
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' })
-  },
-
+    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+  }
 });
