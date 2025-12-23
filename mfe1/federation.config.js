@@ -5,9 +5,7 @@ module.exports = withNativeFederation({
   name: 'mfe1',
   filename: 'remoteEntry.js',
 
-  exposes: {
-     './routes': './src/app/app.routes.ts'
-  },
+publicPath: 'https://erprachirajput76-cmd.github.io/mfe/',
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' })
