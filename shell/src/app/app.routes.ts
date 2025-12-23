@@ -37,6 +37,6 @@ export const routes: Routes = [
     path: 'mfe1',
     loadChildren: () =>
       loadRemoteModule('mfe1', './routes')
-        .then(m => m.routes)
+        .then(m => m.ROUTES)
   }
 ];
