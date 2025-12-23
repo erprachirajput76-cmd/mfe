@@ -24,19 +24,14 @@
 //     redirectTo: 'mfe1'
 //   }
 // ];
-import { Routes } from '@angular/router';
+
 import { loadRemoteModule } from '@angular-architects/native-federation';
 
-export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'mfe1',
-    pathMatch: 'full'
-  },
+export const routes = [
   {
     path: 'mfe1',
     loadChildren: () =>
       loadRemoteModule('mfe1', './routes')
-        .then(m => m.ROUTES)
+        .then(m => m.routes),
   }
 ];

@@ -1,3 +1,6 @@
 {
-  "mfe1": "https://erprachirajput76-cmd.github.io/mfe/mfe1/remoteEntry.js"
+  "mfe1": {
+    "type": "module",
+    "remoteEntry": "https://erprachirajput76-cmd.github.io/mfe/mfe1/browser/remoteEntry.js"
+  }
 }
