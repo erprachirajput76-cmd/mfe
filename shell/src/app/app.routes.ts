@@ -35,16 +35,8 @@ export const routes: Routes = [
   },
   {
     path: 'mfe1',
-    loadComponent: () => 
-      loadRemoteModule('mfe1', './bootstrap')
-        .then(m => m.AppComponent)
-        .catch(err => {
-          console.error('Error loading MFE1:', err);
-          throw err;
-        })
-  },
-  {
-    path: '**',
-    redirectTo: 'mfe1'
+    loadChildren: () =>
+      loadRemoteModule('mfe1', './routes')
+        .then(m => m.routes)
   }
 ];
