@@ -1,34 +1,30 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
-import { TableComponent } from 'shared-lib';
-
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [TableComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  standalone: true,
+  imports: [RouterOutlet],
+  template: `
+    <div class="mfe1-container">
+      <h2>MFE1 Remote App</h2>
+      <p>This is loaded via Native ESM Federation</p>
+      <router-outlet></router-outlet>
+    </div>
+  `,
+  styles: [`
+    .mfe1-container {
+      padding: 20px;
+      border: 2px solid #3f51b5;
+      border-radius: 8px;
+      margin: 20px;
+    }
+    .title, .description {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 8px 0;
+    }
+  `]
 })
-export class AppComponent implements OnInit {
-  private http = inject(HttpClient);
-
-  posts: Post[] = [];
-  columns = [
-    { key: 'userId', label: 'userId' },
-    { key: 'id', label: 'ID' },
-    { key: 'title', label: 'Title' },
-    { key: 'body', label: 'Body' },
-  ];
-
-  ngOnInit(): void {
-    this.http
-      .get<Post[]>('https://jsonplaceholder.typicode.com/posts')
-      .subscribe((data) => (this.posts = data));
-  }
+export class AppComponent {
 }

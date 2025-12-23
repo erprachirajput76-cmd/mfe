@@ -3,18 +3,14 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 module.exports = withNativeFederation({
 
   name: 'mfe1',
+  filename: 'remoteEntry.js',
 
   exposes: {
-    './Component': './src/app/app.component.ts',
+     './routes': './src/app/app.routes.ts'
   },
 
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
-    'shared-lib': {
-      singleton: true,
-      strictVersion: true,
-      requiredVersion: '0.0.2',
-    },
+    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' })
   },
 
   skip: [
