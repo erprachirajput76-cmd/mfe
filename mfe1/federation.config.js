@@ -10,7 +10,7 @@ module.exports = withNativeFederation({
     './routes': './src/app/app.routes.ts'
   },
 
-  publicPath: 'https://erprachirajput76-cmd.github.io/mfe/mfe1/browser/',
+  publicPath: 'https://erprachirajput76-cmd.github.io/mfe/mfe1/dist/mfe1/browser/',
 
   shared: {
     ...shareAll({
